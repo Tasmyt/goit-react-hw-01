@@ -8,7 +8,7 @@ export default function FriendList({ friends }) {
       <Stats>
         {friends.map(dataFriend => (
           <Item key={dataFriend.id}>
-            <Status stat={+dataFriend.isOnline}></Status>
+            <Status $stat={dataFriend.isOnline.toString()}></Status>
             <Avatar src={dataFriend.avatar} alt={dataFriend.name} width="48" />
             <Name>{dataFriend.name}</Name>
           </Item>

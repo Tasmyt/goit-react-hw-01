@@ -5,7 +5,7 @@ export const Status = styled.span`
     width: 20px;
     height: 20px;
     
-    background-color: ${({stat}) => (stat === 1 ? '#098d44' : 'red')};
+    background-color: ${({stat}) => (stat ? '#098d44' : 'red')};
 `
 export const Avatar = styled.img`
     display: block;       
