@@ -6,7 +6,9 @@ import user from './Profile/user.json';
 import data from './Statistics/data.json';
 import dataFriend from './FriendList/friends.json';
 import dataTrans from './TransactionHistory/transactions.json';
+
 export const App = () => {
+  
   return (
     <div
       style={{
