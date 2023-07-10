@@ -35,8 +35,7 @@ export const App = () => {
         stats={data}
       />
       <FriendList
-        friends={dataFriend}
-        
+        friends={dataFriend}        
       />
       <TransactionHistory
         items={dataTrans}
