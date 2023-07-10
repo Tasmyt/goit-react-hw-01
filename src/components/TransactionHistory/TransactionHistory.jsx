@@ -13,11 +13,11 @@ export default function TransactionHistory({ items }) {
   </thead>
 
   <tbody>
-{ items.map(dataTrans => (
-    <tr key={dataTrans.id}>
-      <Info>{dataTrans.type}</Info>
-      <Info>{dataTrans.amount}</Info>
-      <Info>{dataTrans.currency}</Info>
+{ items.map(({id, type, amount, currency}) => (
+    <tr key={id}>
+      <Info>{type}</Info>
+      <Info>{amount}</Info>
+      <Info>{currency}</Info>
     </tr>
 ))}
   </tbody>
@@ -28,12 +28,12 @@ export default function TransactionHistory({ items }) {
 
 TransactionHistory.propTypes = {
   
-  friends: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string,
-        type: PropTypes.string,
-        amount: PropTypes.number,
-        currency: PropTypes.string,
+        id: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        amount: PropTypes.string.isRequired,
+        currency: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };

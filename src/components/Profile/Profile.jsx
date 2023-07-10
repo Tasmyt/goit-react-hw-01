@@ -8,7 +8,15 @@ import {
   Location,
   Stats,
 } from './Profile.styled';
-export default function Profile({ username, tag, location, avatar, stats }) {
+export default function Profile({
+  username,
+  tag,
+  location,
+  avatar,
+  followers,
+  views,
+  likes,
+}) {
   return (
     <Conteiner>
       <Description>
@@ -21,15 +29,15 @@ export default function Profile({ username, tag, location, avatar, stats }) {
       <Stats>
         <li>
           <Tag>Followers</Tag>
-          <Location>{stats.followers}</Location>
+          <Location>{followers}</Location>
         </li>
         <li>
           <Tag>Views</Tag>
-          <Location>{stats.views}</Location>
+          <Location>{views}</Location>
         </li>
         <li>
           <Tag>Likes</Tag>
-          <Location>{stats.likes}</Location>
+          <Location>{likes}</Location>
         </li>
       </Stats>
     </Conteiner>
@@ -45,5 +53,5 @@ Profile.propTypes = {
     followers: PropTypes.number.isRequired,
     views: PropTypes.number.isRequired,
     likes: PropTypes.number.isRequired,
-  }).isRequired,
+  }),
 };

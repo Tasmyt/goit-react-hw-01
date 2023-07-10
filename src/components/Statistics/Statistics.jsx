@@ -7,10 +7,10 @@ export default function Statistics({ title, stats }) {
       {title && <Title>{title}</Title>}
 
       <Stats>
-        {stats.map(data => (
-          <Item key={data.id}>
-            <Tag>{data.label}</Tag>
-            <Location>{data.percentage}</Location>
+        {stats.map(({id, label, percentage}) => (
+          <Item key={id}>
+            <Tag>{label}</Tag>
+            <Location>{percentage}</Location>
           </Item>
         ))}
       </Stats>
@@ -22,9 +22,9 @@ Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
     })
-  ),
+  ).isRequired,
 };

@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types';
-import { Name, Stats } from '../Profile/Profile.styled';
-import { Item, Statis } from '../Statistics/Statistics.styled';
-import { Avatar, Status } from './FriendList.styled';
+import FriendListItem from './FriendListItem';
+import { Stats } from '../Profile/Profile.styled';
+import { Statis } from '../Statistics/Statistics.styled';
+
 export default function FriendList({ friends }) {
   return (
     <Statis>
       <Stats>
-        {friends.map(dataFriend => (
-          <Item key={dataFriend.id}>
-            <Status $stat={dataFriend.isOnline.toString()}></Status>
-            <Avatar src={dataFriend.avatar} alt={dataFriend.name} width="48" />
-            <Name>{dataFriend.name}</Name>
-          </Item>
+        {friends.map(({ id, avatar, name, isOnline }) => (
+          <FriendListItem
+            key={id}
+            avatar={avatar}
+            name={name}
+            isOnline={isOnline}
+          />
         ))}
       </Stats>
     </Statis>
@@ -25,5 +27,5 @@ FriendList.propTypes = {
       name: PropTypes.string.isRequired,
       isOnline: PropTypes.bool.isRequired,
     })
-  ),
+  ).isRequired,
 };
