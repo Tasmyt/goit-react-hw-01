@@ -6,7 +6,7 @@ import { Avatar, Status } from './FriendList.styled';
 export default function FriendListItem({ isOnline, avatar, name }) {
   return (    
           <Item >
-            <Status stat={+isOnline}></Status>
+            <Status stat={isOnline}></Status>
             <Avatar src={avatar} alt={name} width="48" />
             <Name>{name}</Name>
           </Item>

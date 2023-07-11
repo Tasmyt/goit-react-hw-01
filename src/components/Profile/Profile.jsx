@@ -13,9 +13,7 @@ export default function Profile({
   tag,
   location,
   avatar,
-  followers,
-  views,
-  likes,
+  stats
 }) {
   return (
     <Conteiner>
@@ -29,15 +27,15 @@ export default function Profile({
       <Stats>
         <li>
           <Tag>Followers</Tag>
-          <Location>{followers}</Location>
+          <Location>{stats.followers}</Location>
         </li>
         <li>
           <Tag>Views</Tag>
-          <Location>{views}</Location>
+          <Location>{stats.views}</Location>
         </li>
         <li>
           <Tag>Likes</Tag>
-          <Location>{likes}</Location>
+          <Location>{stats.likes}</Location>
         </li>
       </Stats>
     </Conteiner>
